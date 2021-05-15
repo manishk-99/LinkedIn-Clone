@@ -8,7 +8,7 @@ const Home = (props) => {
     <Container>
       <Section>
         <h5>
-          <a>Hiring in a hurry? - </a>
+          <a>Hiring in a Hurry?-</a>
         </h5>
         <p>
           Find talented pros in record time with Upwork and keep business
