@@ -47,6 +47,7 @@ const Rightside = (props) => {
 
 const Container = styled.div`
   grid-area: rightside;
+  padding-right: 35%;
   @media (max-width: 768px) {
     display: flex;
     display: none;

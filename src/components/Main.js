@@ -175,6 +175,8 @@ const ShareBox = styled(CommonCard)`
   color: #958b7b;
   margin: 0 0 8px;
   background: white;
+  box-shadow: rgb(0 0 0 / 15%) 0px 0px 0px 1px, rgb(0 0 0 / 20%) 0px 0px 0px;
+  /* border: none; */
   div {
     button {
       outline: none;
@@ -349,6 +351,8 @@ const SocialActions = styled.div`
 `;
 
 const Content = styled.div`
+  border-radius: 5px;
+  box-shadow: rgb(0 0 0 / 15%) 0px 0px 0px 1px, rgb(0 0 0 / 20%) 0px 0px 0px;
   text-align: center;
   & > img {
     width: 30px;

@@ -9,20 +9,22 @@ const Home = (props) => {
   return (
     <Container>
       {!props.user && <Redirect to="/" />}
-      <Section>
-        <h5>
-          <a>Hiring in a Hurry?-</a>
-        </h5>
-        <p>
-          Find talented pros in record time with Upwork and keep business
-          moving.
-        </p>
-      </Section>
-      <Layout>
-        <Leftside />
-        <Main />
-        <Rightside />
-      </Layout>
+      <Content>
+        <Section>
+          <h5>
+            <a>Hiring in a Hurry?-</a>
+          </h5>
+          <p>
+            Find talented pros in record time with Upwork and keep business
+            moving.
+          </p>
+        </Section>
+        <Layout>
+          <Leftside />
+          <Main />
+          <Rightside />
+        </Layout>
+      </Content>
     </Container>
   );
 };
@@ -39,7 +41,7 @@ const Content = styled.div`
 `;
 
 const Section = styled.section`
-  min-height: 50px;
+  /* min-height: 50px; */
   padding: 16px 0;
   box-sizing: content-box;
   text-align: center;
