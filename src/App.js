@@ -11,7 +11,7 @@ function App(props) {
   useEffect(() => {
     props.getUserAuth();
   }, []);
-
+ 
   return (
     <div className="App">
       <HashRouter>
