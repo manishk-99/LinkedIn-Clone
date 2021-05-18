@@ -60,7 +60,7 @@ const Main = (props) => {
         </div>
       </ShareBox>
       <Content>
-        {props.loading && <img src={"/images/spin-loader.svg"} />}
+        {props.loading && <img src="/images/spin-loader.svg" />}
         <Article>
           <SharedActor>
             <a>
@@ -326,7 +326,5 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => ({
-
-})
+const mapDispatchToProps = (dispatch) => ({});
 export default connect(mapStateToProps, mapDispatchToProps)(Main);
