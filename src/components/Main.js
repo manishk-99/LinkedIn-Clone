@@ -3,6 +3,7 @@ import styled from "styled-components";
 import PostModal from "./PostModal";
 import { connect } from "react-redux";
 import { getArticlesAPI } from "../actions";
+import ReactPlayer from "react-player";
 
 const Main = (props) => {
   const [showModal, setShowModal] = useState("close");
@@ -82,7 +83,7 @@ const Main = (props) => {
                       <img src={article.actor.image} alt="" />
                       <div>
                         <span>{article.actor.title}</span>
-                        <span>{article.actor.description}</span>
+                        <span>{article.actor.description} follows</span>
                         <span>
                           {article.actor.date.toDate().toLocaleDateString()}
                         </span>
@@ -95,7 +96,11 @@ const Main = (props) => {
                   <Description>{article.description}</Description>
                   <SharedImg>
                     <a>
-                      <img src="/images/shared-image.jpg" alt="" />
+                      {!article.sharedImg && article.video ? (
+                        <ReactPlayer width={"100%"} url={article.video} />
+                      ) : (
+                        article.sharedImg && <img src={article.sharedImg} />
+                      )}
                     </a>
                   </SharedImg>
                   <SocialCounts>
@@ -112,8 +117,14 @@ const Main = (props) => {
                         <span>93</span>
                       </button>
                     </li>
-                    <li>
-                      <a>7 comments</a>
+                    <li
+                      style={{
+                        color: "#0a66c2",
+                        cursor: "pointer",
+                        lineHeight: "1.53333"
+                      }}
+                    >
+                      <a>{article.comments} comments</a>
                     </li>
                   </SocialCounts>
                   <SocialActions>
@@ -218,6 +229,7 @@ const Article = styled(CommonCard)`
   padding: 0;
   margin: 0 0 8px;
   overflow: visible;
+  background: white;
 `;
 
 const SharedActor = styled.div`
@@ -308,6 +320,8 @@ const SocialCounts = styled.ul`
     font-size: 12px;
     button {
       display: flex;
+      border: none;
+      background-color: white;
     }
   }
 `;
@@ -323,6 +337,8 @@ const SocialActions = styled.div`
     align-items: center;
     padding: 8px;
     color: #0a66c2;
+    border: none;
+    background-color: white;
 
     @media (min-width: 768px) {
       span {

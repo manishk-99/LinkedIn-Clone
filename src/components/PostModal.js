@@ -58,7 +58,7 @@ const PostModal = (props) => {
         <Container>
           <Content>
             <Header>
-              <h2>Create a Post</h2>
+              <h2>Create a post</h2>
               <button onClick={(event) => reset(event)}>
                 <img src="/images/close-icon.svg" alt="" />
               </button>
@@ -185,6 +185,8 @@ const Header = styled.div`
     width: 40px;
     min-width: auto;
     color: rgba(0, 0, 0, 0.15);
+    border: none;
+    background: white;
     svg,
     img {
       pointer-events: none;
@@ -234,6 +236,8 @@ const AssetButton = styled.button`
   height: 40px;
   min-width: auto;
   color: rgba(0, 0, 0, 0.5);
+  border: none;
+  background-color: white;
 `;
 const AttachAssets = styled.div`
   align-items: center;
@@ -260,7 +264,9 @@ const PostButton = styled.button`
   border-radius: 20px;
   padding-left: 16px;
   padding-right: 16px;
-  background: ${(props) => (props.disabled ? "rgba(0, 0, 0, 0.8)" : "#0a66c2")};
+  border: none;
+  background: ${(props) =>
+    props.disabled ? "rgba(0, 0, 0, 0.08)" : "rgb(10, 102, 194)"};
   color: ${(props) => (props.disabled ? "rgba(1, 1, 1, 0.2)" : "white")};
   &:hover {
     background: ${(props) =>
@@ -274,12 +280,14 @@ const Editor = styled.div`
     width: 100%;
     min-height: 100px;
     resize: none;
+    border: none;
   }
   input {
     width: 100%;
     height: 35px;
     font-size: 16px;
     margin-bottom: 20px;
+    border: none;
   }
 `;
 
